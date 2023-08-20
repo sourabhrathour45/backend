@@ -1,7 +1,10 @@
 const express = require("express");
 const app = express();
+const bodyParser = require("body-parser")
 
 const port = 3000;
+
+app.use(bodyParser.json())
 
 // app.get(route, callback fn)
 
@@ -26,9 +29,9 @@ const calculateMultiply = (counter) => {
   };
 
 
-app.get("/", (req, res) => {
+app.post("/add", (req, res) => {
   // query parameters
-  const counter = req.query.count
+  const counter = req.headers.count
   const result = calculateSum(counter)
   res.send(`The sum is : ${result}`);
 });
@@ -41,3 +44,6 @@ app.get("/multiply", (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
+
+
+
