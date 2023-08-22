@@ -18,28 +18,16 @@ const calculateSum = (counter) => {
   return sum;
 };
 
-const calculateMultiply = (counter) => {
-    let multiply = 0;
-  
-    for (let i = 1; i <= counter; i++) {
-      multiply += i;
-    }
-  
-    return multiply;
-  };
 
 
-app.post("/add", (req, res) => {
-  // query parameters
-  const counter = req.headers.count
+
+app.post("/", (req, res) => {
+  const counter = req.body.counter
   const result = calculateSum(counter)
   res.send(`The sum is : ${result}`);
 });
 
-app.get("/multiply", (req, res) => {
-    const result = calculateMultiply(5)
-    res.send(`The multiply is : ${result}`);
-  });
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
