@@ -18,7 +18,6 @@ const calculateSum = (counter) => {
   return sum;
 };
 
-// comment
 
 app.post("/", (req, res) => {
   const counter = req.body.counter
@@ -31,6 +30,4 @@ app.post("/", (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
-
-
 
