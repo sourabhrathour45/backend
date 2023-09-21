@@ -18,6 +18,7 @@ const calculateSum = (counter) => {
   return sum;
 };
 
+// comment
 app.post("/", (req, res) => {
   const counter = req.body.counter
   const result = calculateSum(counter)
