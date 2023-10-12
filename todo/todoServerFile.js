@@ -3,8 +3,10 @@ const app = express();
 const port = 3001;
 const bodyParser = require("body-parser");
 const fs = require("fs");
+const cors = require("cors")
 
 app.use(bodyParser.json());
+app.use(cors())
 
 const findIndex = (todos, id) => {
   for (let i = 0; i < todos.length; i++) {
